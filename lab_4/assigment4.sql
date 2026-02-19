@@ -1,3 +1,8 @@
+-- Name: Tridev Kumar
+-- Roll No: 22410
+-- Subject: DBMS Lab
+-- Assignment: 4
+
 --Part A: Basic Data Display (Using Aliases)
 --Display all columns from the Student table using suitable aliases for every column.
 SELECT 
@@ -146,4 +151,5 @@ FROM STUDENT;
 SELECT 
     NAME,
     SUBSTR(EMAIL,INSTR(EMAIL , '@')+1) AS EMAIL_DOMAIN
+
 FROM FACULTY;
