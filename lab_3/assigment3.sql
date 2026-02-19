@@ -1,3 +1,8 @@
+-- Name: Tridev Kumar
+-- Roll No: 22410
+-- Subject: DBMS Lab
+-- Assignment: 3
+
 INSERT INTO Department VALUES (101, 'Civil Engineering', 'Block A');
 INSERT INTO Department VALUES (102, 'Mechanical Engineering', 'Block B');
 INSERT INTO Department VALUES (105, 'Computer Science and Engineering', 'Block C');
@@ -245,4 +250,5 @@ INSERT INTO Enrollment VALUES (1247, '5th', 'A', 23105128010, 105502);
 INSERT INTO Enrollment VALUES (1248, '5th', 'B+', 23105128010, 105503);
 INSERT INTO Enrollment VALUES (1249, '5th', 'B', 23105128010, 105504);
 INSERT INTO Enrollment VALUES (1250, '5th', 'A', 23105128010, 100508);
+
 
