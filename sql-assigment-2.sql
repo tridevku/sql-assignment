@@ -4,52 +4,61 @@
 -- Assignment: 2
 -- Database: Oracle SQL
 
--- Department Table
-CREATE TABLE Department (
-    DeptID NUMBER PRIMARY KEY,
-    DeptName VARCHAR2(50),
-    OfficeLocation VARCHAR2(50)
+
+   create table department (
+    dept_id int primary key,
+    dept_name varchar(50),
+    office_location varchar(100)
 );
 
--- Student Table
-CREATE TABLE Student (
-    StudentID NUMBER PRIMARY KEY,
-    Name VARCHAR2(50),
-    DOB DATE,
-    Gender VARCHAR2(10),
-    Contact VARCHAR2(15),
-    DeptID NUMBER,
-    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+
+
+
+create table student (
+    student_id int primary key,
+    name varchar(50),
+    date_of_birth date,
+    gender char(1),
+    contact_no varchar(13),
+    dept_id int,
+    foreign key (dept_id) references department(dept_id)
 );
 
--- Faculty Table
-CREATE TABLE Faculty (
-    FacultyID NUMBER PRIMARY KEY,
-    Name VARCHAR2(50),
-    Designation VARCHAR2(30),
-    Email VARCHAR2(50),
-    DeptID NUMBER,
-    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+
+
+
+create table faculty (
+    faculty_id int primary key,
+    name varchar(50),
+    designation varchar(20),
+    email varchar(50),
+    dept_id int,
+    foreign key (dept_id) references department(dept_id)
 );
 
--- Course Table
-CREATE TABLE Course (
-    CourseID NUMBER PRIMARY KEY,
-    CourseName VARCHAR2(50),
-    Credits NUMBER,
-    DeptID NUMBER,
-    FacultyID NUMBER,
-    FOREIGN KEY (DeptID) REFERENCES Department(DeptID),
-    FOREIGN KEY (FacultyID) REFERENCES Faculty(FacultyID)
+
+
+
+create table course (
+    course_id int primary key,
+    course_name varchar(30),
+    credits int,
+    dept_id int,
+    faculty_id int,
+    foreign key (dept_id) references department(dept_id),
+    foreign key (faculty_id) references faculty(faculty_id)
 );
 
--- Enrollment Table (M:N relationship)
-CREATE TABLE Enrollment (
-    EnrollmentID NUMBER PRIMARY KEY,
-    StudentID NUMBER,
-    CourseID NUMBER,
-    Semester NUMBER,
-    Grade VARCHAR2(5),
-    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
-    FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
+
+
+
+create table enrollment (
+    enrollment_id int primary key,
+    semester varchar(10),
+    grade char(2),
+    student_id int,
+    course_id int,
+    foreign key (student_id) references student(student_id),
+    foreign key (course_id) references course(course_id)
 );
+
